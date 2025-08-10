@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Summarizer</title>
+  <style>
+    body {
+      min-width: 250px;
+      padding: 15px;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f6fa;
+      color: #333;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    select, button {
+      width: 100%;
+      padding: 8px 10px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+      transition: 0.2s;
+    }
+
+    select:focus, button:hover {
+      border-color: #6c63ff;
+      box-shadow: 0 0 5px rgba(108, 99, 255, 0.4);
+    }
+
+    button {
+      background-color: #6c63ff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button#copy-btn {
+      background-color: #4CAF50;
+    }
+
+    pre {
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background-color: white;
+      max-height: 250px;
+      overflow-y: auto;
+      font-size: 13px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+<body>
+  <h2>AI Summarizer</h2>
+
+  <select id="summary-type">
+    <option value="brief">Brief</option>
+    <option value="detailed">Detailed</option>
+    <option value="bullets">Bullet Points</option>
+  </select>
+
+  <button id="summarize">Summarize</button>
+  <button id="copy-btn">Copy</button>
+
+  <pre id="result">Select a type and click summarize</pre>
+
+  <script src="popup.js"></script>
+</body>
+</html>

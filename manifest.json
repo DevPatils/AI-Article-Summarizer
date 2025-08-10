@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Saathi",
+    "version": "1.0",
+    "description": "A simple Chrome extension example.",
+    "permissions": [
+      
+        "scripting",
+        "activeTab",
+        "storage"  
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "options_page": "options.html",
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+
+        },
+        "content_scripts": [
+            {
+                "matches": ["<all_urls>"],
+                "js": ["content.js"]
+            }
+        ]
+    }
+
+}
