@@ -1,13 +1,12 @@
 {
     "manifest_version": 3,
-    "name": "Saathi",
+    "name": "WebCatch",
     "version": "1.0",
     "description": "A simple Chrome extension example.",
     "permissions": [
-      
         "scripting",
         "activeTab",
-        "storage"  
+        "storage"
     ],
     "background": {
         "service_worker": "background.js"
@@ -19,14 +18,20 @@
     "action": {
         "default_popup": "popup.html",
         "default_icon": {
-
-        },
-        "content_scripts": [
-            {
-                "matches": ["<all_urls>"],
-                "js": ["content.js"]
-            }
-        ]
-    }
-
+            "16": "image.png",
+            "48": "image.png",
+            "128": "image.png"
+        }
+    },
+    "icons": {
+        "16": "image.png",
+        "48": "image.png",
+        "128": "image.png"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ]
 }

@@ -1,15 +1,15 @@
-function getArticleText(){
+function getArticleText() {
     const article = document.querySelector("article");
-    if(article)return article.innerText;
+    if (article) return article.innerText;
 
     const paragraphs = Array.from(document.querySelectorAll("p"));
-    return paragraphs.map(p => p.innerText).join("\n");
-
+    return paragraphs.map(p => p.innerText).join('\n');
 }
 
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    if(request.type==="GET_ARTICLE_TEXT"){
+chrome.runtime.onMessage.addListener((req, _sender, sendResponse) => {
+    if (req.type === "GET_ARTICLE_TEXT") {
         const articleText = getArticleText();
-        sendResponse({text: articleText});
+        sendResponse({ text: articleText });
     }
+    return true; // Keep the message channel open (good practice)
 });
