@@ -42,6 +42,15 @@ document.getElementById('summarize').addEventListener('click', () => {
     });
 });
 
+// Open Options Page button logic
+document.getElementById('open-options').addEventListener('click', () => {
+    if (chrome.runtime.openOptionsPage) {
+        chrome.runtime.openOptionsPage();
+    } else {
+        window.open(chrome.runtime.getURL('options.html'));
+    }
+});
+
 /**
  * Sends text to Gemini API and returns the summary
  */

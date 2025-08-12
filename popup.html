@@ -25,7 +25,7 @@
       box-shadow: 4px 4px 0 #000;
     }
 
-    select, button {
+    select {
       width: 100%;
       padding: 10px 12px;
       margin-bottom: 12px;
@@ -38,20 +38,42 @@
       transition: transform 0.1s ease;
     }
 
-    select:focus, button:hover {
+    select:focus {
       transform: translate(-2px, -2px);
       box-shadow: 6px 6px 0 #000;
     }
 
-    button {
-      background-color: #6c63ff;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
+    /* Inline button container */
+    .btn-group {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 12px;
     }
 
-    button#copy-btn {
-      background-color: #4CAF50;
+    .btn-group button {
+      flex: 1;
+      padding: 8px 0;
+      font-size: 12px;
+      font-weight: bold;
+      border: 3px solid #000;
+      background: #6c63ff;
+      color: white;
+      cursor: pointer;
+      box-shadow: 4px 4px 0 #000;
+      transition: transform 0.1s ease;
+    }
+
+    .btn-group button#copy-btn {
+      background: #4CAF50;
+    }
+
+    .btn-group button#open-options {
+      background: #ff9800;
+    }
+
+    .btn-group button:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 #000;
     }
 
     pre {
@@ -93,12 +115,11 @@
     <option value="bullets">Bullet Points</option>
   </select>
 
-  <button id="summarize">Summarize</button>
-
-  <button id="copy-btn">Copy</button>
-  <button id="open-options">Options</button>
-
-  
+  <div class="btn-group">
+    <button id="summarize">Summarize</button>
+    <button id="copy-btn">Copy</button>
+    <button id="open-options">Options</button>
+  </div>
 
   <pre id="result">Select a type and click summarize</pre>
 
